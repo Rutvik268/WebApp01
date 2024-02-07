@@ -2,7 +2,6 @@ package com.rutvik;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -21,13 +20,12 @@ public class AddServlet extends HttpServlet {
 
 		int i = Integer.parseInt(req.getParameter("num1"));
 		int j = Integer.parseInt(req.getParameter("num2"));
-
 		int k = i + j;
 
 //        + "" is used to append k into String
+		
 		Cookie cookie = new Cookie("k", k + "");
 		res.addCookie(cookie);
-
 		res.sendRedirect("Square");
 
 //		PrintWriter out = res.getWriter();
